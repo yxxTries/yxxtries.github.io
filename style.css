@@ -64,12 +64,12 @@ body::before {
 
 .bulge-label {
   position: absolute;
-  left: 70px; /* adjust as needed */
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0%; /* adjust as needed */
+  left: 30px; /* adjust as needed */
+  width: 600px; /* adjust as needed */      
   color: #fff;
-  font-size: 1rem;
-  white-space: nowrap;
+  font-size: 0.8rem;
+  white-space: pre-line; /* allow multiline text */
   pointer-events: none;
 }
 
