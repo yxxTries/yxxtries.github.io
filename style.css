@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 /* Make the page scrollable */
 body {
   height: 200vh;
@@ -68,9 +69,11 @@ body::before {
   left: 30px; /* adjust as needed */
   width: 600px; /* adjust as needed */      
   color: #fff;
+  font-family: 'Source Code Pro';
   font-size: 0.8rem;
   white-space: pre-line; /* allow multiline text */
   pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -98,7 +101,7 @@ body::before {
 .stick-figure {
   position: fixed;
   bottom: 6px;
-  left: 50.68%;
+  left: 70%;
   transform: translateX(-50%);
   z-index: 2;       /* ensure figure stays above floor */
 }

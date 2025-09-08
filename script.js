@@ -27,8 +27,8 @@ window.addEventListener('scroll', () => {
   bulgeLabel.style.top = `${y}px`;
 
   //bulge text limit
-  if ((scrollPercent * 100).toFixed(0) < 3) {
-    bulgeLabel.style.transform = `translateY(${-13}px)`;
+  if ((scrollPercent * 100).toFixed(0) < 18) {
+    bulgeLabel.style.transform = `translateY(${-75}px)`;
   }
   else{
     bulgeLabel.style.transform = `translateY(${0}px)`;
