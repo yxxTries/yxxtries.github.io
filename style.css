@@ -1,0 +1,196 @@
+/* Make the page scrollable */
+body {
+  height: 200vh;
+  margin: 0;
+  background: #000;
+  overflow-x: hidden;
+  /* Make the grid static (fixed to viewport, not scrolling with content) */
+}
+
+.vertical-line{
+  position: relative;
+  top: 40px;
+  width: 5px;
+  height: 450px;
+  background: #ffffffee;
+  z-index: 1; /* Increased to ensure visibility above all elements */
+}
+
+.background-line{
+  position: fixed;
+  top: 0;
+  width: 5px;
+  height: 150vh;
+  background: #ffffffee;
+  z-index: 1; /* Increased to ensure visibility above all elements */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.07) 0px,
+      rgba(255,255,255,0.07) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.07) 0px,
+      rgba(255,255,255,0.07) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+}
+
+.bulge{
+  position: absolute;
+  top: 10%;
+  width: 30px;
+  height: 30px;
+  background: #ffffffee;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.15s ease out;
+}
+
+.bulge-label {
+  position: absolute;
+  left: 70px; /* adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+
+/* Container that holds the figure */
+.scene {
+  position: fixed;
+  bottom: 0;        /* changed to bottom anchor */
+  left: 0;
+  width: 100%;
+  height: 100vh;    /* explicit viewport height */
+}
+
+/* Floor line fixed at bottom */
+.floor {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: black;
+  z-index: 1;       /* ensure floor stays above */
+}
+
+/* Stickman container, centered horizontally and standing on the floor */
+.stick-figure {
+  position: fixed;
+  bottom: 6px;
+  left: 50.68%;
+  transform: translateX(-50%);
+  z-index: 2;       /* ensure figure stays above floor */
+}
+
+/* Inner wrapper that we scale */
+.scale {
+  position: relative;
+  width: 160px;
+  height: 300px;
+  transform-origin: bottom center;
+  transition: transform 0.3s ease-out;
+  transform: scaleY(0);  /* start scaled down */
+}
+
+.scale.grown {
+  transform: scaleY(1);  /* end state when grown */
+}
+
+/* Head */
+.head {
+  position: absolute;
+  width: 60px;
+  height: 55px;
+  border: 1px solid #ffffffff; /* thinner outline */
+  border-radius: 50%;
+  background: transparent;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* Neck */
+.neck {
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background: transparent;
+  border-left: 1px solid #fff; /* thinner outline */
+  left: 50%;
+  top: 60px; /* exactly under the head */
+  transform: translateX(-50%);
+}
+
+/* Body */
+.body {
+  position: absolute;
+  width: 1px;
+  height: 125px;
+  background: transparent;
+  border-left: 1px solid #fff; /* thinner outline */
+  left: 50%;
+  top: 56px; /* continues directly under the neck */
+  transform: translateX(-50%);
+}
+
+/* Arms */
+.arm {
+  position: absolute;
+  width: 90px;
+  height: 1px;
+  background: transparent;
+  border-top: 1px solid #fff; /* thinner outline */
+  top: 92px;
+}
+.arm.left {
+  left: calc(50% - 90px);
+  transform-origin: 100% 50%;
+  transform: rotate(-40deg);
+}
+.arm.right {
+  left: calc(50% - 1px);
+  transform-origin: 0% 50%;
+  transform: rotate(40deg);
+}
+
+/* Legs */
+.leg {
+  position: absolute;
+  width: 1px;
+  height: 100px;
+  background: transparent;
+  border-left: 1px solid #fff;
+  top: 180px;
+  transform-origin: top center;  /* changed back to top */
+}
+
+.leg.left {
+  left: 50%;
+  transform: translateX(-50%) rotate(30deg);
+}
+
+.leg.right {
+  left: 50%;
+  transform: translateX(-50%) rotate(-30deg);
+}
