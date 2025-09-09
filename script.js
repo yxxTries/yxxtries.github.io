@@ -34,6 +34,8 @@ window.addEventListener('scroll', () => {
   else {
     bulgeLabel.style.transform = `translateY(${-90}px)`;
   }
+
+  
   if ((scrollPercent * 100).toFixed(0) < 25) {
     bulgeLabel.innerHTML = `<b>Freelance Computer Technician</b> <span style="color:grey;font-style:italic">at GameFast, Dubai</span><br>Jan 2020 - Present<br>
     ● Built and upgraded custom PCs for clients, focusing on performance, compatibility, and budget.<br>

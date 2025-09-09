@@ -78,7 +78,7 @@ body::before {
 }
 
     /* Button style */
-.menu-btn2, .menu-btn3 {
+.menu-btn1, .menu-btn3 {
   background: none;
   border: 2px solid white; 
   font-family: 'Source Code Pro';  
@@ -92,7 +92,7 @@ body::before {
 }
 
 /* Hover effect */
-.menu-btn1 {
+.menu-btn2 {
   background: white;
   border: 2px solid white; 
   font-family: 'Source Code Pro';  
@@ -104,7 +104,7 @@ body::before {
   transition: all 0.3s ease;
 }
 
-.menu-btn2:hover {
+.menu-btn1:hover {
   background: rgba(255, 255, 255, 1);
   color: #000;
   box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1);
