@@ -2,6 +2,7 @@ const scaler = document.querySelector('.scale');
 const bulge = document.querySelector('.bulge');
 const line = document.querySelector('.vertical-line');
 const bulgeLabel = document.querySelector('.bulge-label'); 
+const siteHeading = document.querySelector('.site-heading');
 
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
@@ -27,11 +28,11 @@ window.addEventListener('scroll', () => {
   bulgeLabel.style.top = `${y}px`;
 
   //bulge text limit
-  if ((scrollPercent * 100).toFixed(0) < 18) {
-    bulgeLabel.style.transform = `translateY(${-75}px)`;
+  if ((scrollPercent * 100).toFixed(0) > 80) {
+    bulgeLabel.style.transform = `translateY(${-20}px)`;
   }
-  else{
-    bulgeLabel.style.transform = `translateY(${0}px)`;
+  else {
+    bulgeLabel.style.transform = `translateY(${-90}px)`;
   }
   if ((scrollPercent * 100).toFixed(0) < 25) {
     bulgeLabel.innerHTML = `<b>Freelance Computer Technician</b> <span style="color:grey;font-style:italic">at GameFast, Dubai</span><br>Jan 2020 - Present<br>
@@ -69,6 +70,12 @@ window.addEventListener('scroll', () => {
     bulge.style.transform = `translate(-50%, -50%) scale(1)`;
   }, 10000);
 
+  if ((scrollPercent * 100).toFixed(0) > 40) {
+    siteHeading.style.opacity = 0;
+  }
+  else{
+    siteHeading.style.opacity = 1;
+  }
 
 
 });
