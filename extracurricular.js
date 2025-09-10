@@ -37,19 +37,36 @@ window.addEventListener('scroll', () => {
 
   
   if ((scrollPercent * 100).toFixed(0) < 25) {
-    bulgeLabel.innerHTML = `Progress: ${(scrollPercent * 100).toFixed(0)}%`;
+     bulgeLabel.innerHTML = `<b>Chess Player Local & Regional Tournaments</b>
+
+      ● Competed in rated chess tournaments; achieved multiple top finishes at local events.
+      ● Developed strategic thinking, concentration, and problem-solving skills under pressure.
+
+      Progress: ${(scrollPercent * 100).toFixed(0)}%`;
   }
 
   else if ((scrollPercent * 100).toFixed(0) <= 50) {
-    bulgeLabel.innerHTML = `Progress: ${(scrollPercent * 100).toFixed(0)}%`;
+    bulgeLabel.innerHTML = `<b>Student Innovation Challenge Participant</b>
+    November 2024
+
+    ● Researched and developed practical cybersecurity tools, leveraging threat analysis and risk-mitigation strategies tailored for Canadian businesses.
+
+    Progress: ${(scrollPercent * 100).toFixed(0)}%`;
   }
 
   else if((scrollPercent * 100).toFixed(0) <= 75) {
-    bulgeLabel.innerHTML = `Progress: ${(scrollPercent * 100).toFixed(0)}%`;
+    bulgeLabel.innerHTML = `<b>IT Director at Unlock Your Mind MHC</b>
+    September 2024 - September 2025<br>
+    • Responsible for overseeing all technical aspects of the conference.
+    • Maintaining and updating the website for the conference.
+
+    Progress: ${(scrollPercent * 100).toFixed(0)}%`;
   }
 
   else {
-    bulgeLabel.innerHTML = `Progress: ${(scrollPercent * 100).toFixed(0)}%`;
+    bulgeLabel.innerHTML = `<b>Currently exploring new ways to grow and contribute.</b>
+    
+    Progress: ${(scrollPercent * 100).toFixed(0)}%`;
   }
 
   bulge.style.transform = `translate(-50%, -50%) translateY(${direction * 1.5}px)`;
